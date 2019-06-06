@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">SuDo</string>
+    <string name="app_name" translatable="false">SuDo</string>
+    <string name="add_new_task">add new task</string>
 </resources>

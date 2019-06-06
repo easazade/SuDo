@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorAccent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mDaysViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:overScrollMode="never" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <TextView
+        android:id="@+id/mAddTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
-        android:layout_margin="12dp"
-        app:fabSize="normal"
-        app:backgroundTint="@color/white"
-        app:layout_behavior="com.google.android.material.floatingactionbutton.FloatingActionButton$Behavior" />
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="25dp"
+        android:text="@string/add_new_task"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
