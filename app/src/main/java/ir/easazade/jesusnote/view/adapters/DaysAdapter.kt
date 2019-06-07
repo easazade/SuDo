@@ -5,8 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
-import ir.easazade.jesusnote.R.id
+import ir.easazade.jesusnote.R
 import ir.easazade.jesusnote.R.layout
 import ir.easazade.jesusnote.model.Day
 
@@ -20,9 +22,13 @@ class DaysAdapter(
 
   override fun instantiateItem(container: ViewGroup, position: Int): Any {
     val inflater = LayoutInflater.from(container.context)
-    val view = inflater.inflate(layout.page_item_day, container, false)
+    val view = inflater.inflate(layout.page_item_day, container, false) as ConstraintLayout
     container.addView(view)
-    view.findViewById<TextView>(id.texxxxt).text = days[position].dateTime.dayName
+    val list = view.findViewById<RecyclerView>(R.id.pageItemDay_list)
+    val title = view.findViewById<TextView>(R.id.pageItemDay_title)
+    list.layoutManager = LinearLayoutManager(container.context)
+    list.adapter = TasksRecyclerAdapter(days[position].tasks.toMutableList())
+    title.text = days[position].dateTime.getDateAsString()
     return view
   }
 

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="500dp"
   >
@@ -49,9 +50,9 @@
       android:fontFamily="@font/app_default"
       android:hint="@string/description"
       android:maxLength="140"
-      android:paddingEnd="5dp"
-      android:paddingStart="5dp"
       android:textColor="@color/text_medium"
+      android:paddingStart="5dp"
+      android:paddingEnd="5dp"
       android:textColorHint="@color/text_light"
       android:textSize="15sp"
       app:layout_constraintEnd_toEndOf="parent"
@@ -77,27 +78,25 @@
       android:id="@+id/addTaskDialog_date"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:fontFamily="@font/app_default"
-      android:text="2019-09-24"
       android:textSize="15sp"
-      app:layout_constraintEnd_toStartOf="@id/guideline_50"
+      android:text="2019-09-24"
       app:layout_constraintHorizontal_bias="0"
+      android:fontFamily="@font/app_default"
+      app:layout_constraintEnd_toStartOf="@id/guideline_50"
       app:layout_constraintStart_toStartOf="@id/date"
       app:layout_constraintTop_toBottomOf="@id/date"
       />
 
     <ImageView
-      android:layout_width="wrap_content"
-      android:layout_height="0dp"
-      android:layout_marginStart="10dp"
-      android:clickable="true"
-      android:focusable="true"
-      android:foreground="?attr/selectableItemBackgroundBorderless"
       android:padding="3dp"
+      app:srcCompat="@drawable/ic_edit_black_24dp"
+      android:layout_marginStart="10dp"
+      android:foreground="?attr/actionBarItemBackground"
+      app:layout_constraintTop_toTopOf="@id/addTaskDialog_date"
       app:layout_constraintBottom_toBottomOf="@id/addTaskDialog_date"
       app:layout_constraintStart_toEndOf="@id/addTaskDialog_date"
-      app:layout_constraintTop_toTopOf="@id/addTaskDialog_date"
-      app:srcCompat="@drawable/ic_edit_black_24dp"
+      android:layout_width="wrap_content"
+      android:layout_height="0dp"
       />
 
 
@@ -121,27 +120,25 @@
       android:id="@+id/addTaskDialog_time"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:fontFamily="@font/app_default"
-      android:text="21:30"
       android:textSize="15sp"
-      app:layout_constraintEnd_toStartOf="@id/guideline_50"
+      android:text="21:30"
       app:layout_constraintHorizontal_bias="0"
+      android:fontFamily="@font/app_default"
+      app:layout_constraintEnd_toStartOf="@id/guideline_50"
       app:layout_constraintStart_toStartOf="@id/time"
       app:layout_constraintTop_toBottomOf="@id/time"
       />
 
     <ImageView
-      android:layout_width="wrap_content"
-      android:layout_height="0dp"
-      android:layout_marginStart="10dp"
-      android:clickable="true"
-      android:focusable="true"
-      android:foreground="?attr/actionBarItemBackground"
       android:padding="3dp"
+      app:srcCompat="@drawable/ic_edit_black_24dp"
+      android:layout_marginStart="10dp"
+      android:foreground="?attr/actionBarItemBackground"
+      app:layout_constraintTop_toTopOf="@id/addTaskDialog_time"
       app:layout_constraintBottom_toBottomOf="@id/addTaskDialog_time"
       app:layout_constraintStart_toEndOf="@id/addTaskDialog_time"
-      app:layout_constraintTop_toTopOf="@id/addTaskDialog_time"
-      app:srcCompat="@drawable/ic_edit_black_24dp"
+      android:layout_width="wrap_content"
+      android:layout_height="0dp"
       />
 
     <View
@@ -157,10 +154,10 @@
       />
 
     <androidx.appcompat.widget.SwitchCompat
-      android:id="@+id/addTaskDialog_changeStatus"
+      android:id="@+id/switchCompat"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="20dp"
+      android:layout_marginTop="15dp"
       app:layout_constraintEnd_toEndOf="@id/view2"
       app:layout_constraintTop_toBottomOf="@+id/view2"
       />
@@ -174,9 +171,9 @@
       android:text="@string/done"
       android:textColor="@color/text_light"
       android:textSize="18sp"
-      app:layout_constraintBottom_toBottomOf="@+id/addTaskDialog_changeStatus"
+      app:layout_constraintBottom_toBottomOf="@+id/switchCompat"
       app:layout_constraintStart_toStartOf="@+id/view2"
-      app:layout_constraintTop_toTopOf="@+id/addTaskDialog_changeStatus"
+      app:layout_constraintTop_toTopOf="@+id/switchCompat"
       />
 
   </androidx.constraintlayout.widget.ConstraintLayout>

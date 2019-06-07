@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#2FBCFF</color>
-    <color name="colorAccent">#2FBCFF</color>
-    <color name="white">#ffffff</color>
-    <color name="text_dark">#222222</color>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+  <color name="colorPrimary">#ffffff</color>
+  <color name="colorPrimaryDark">#2FBCFF</color>
+  <color name="colorAccent">#2FBCFF</color>
+  <color name="white">#ffffff</color>
+  <color name="text_dark">#222222</color>
   <color name="text_light">#AFAFAF</color>
-    <color name="none">#00000000</color>
+  <color name="none">#00000000</color>
   <color name="grey_line">#80A9A9A9</color>
   <color name="text_medium">#6F6F6F</color>
+  <color name="light_grey">#EBEBEB</color>
 </resources>

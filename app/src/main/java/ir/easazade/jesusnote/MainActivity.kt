@@ -4,8 +4,10 @@ import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ir.easazade.jesusnote.model.Day
+import ir.easazade.jesusnote.model.Task
 import ir.easazade.jesusnote.utils.AppContextWrapper
 import ir.easazade.jesusnote.utils.DateTime
+import ir.easazade.jesusnote.utils.currentDateTime
 import ir.easazade.jesusnote.view.adapters.DaysAdapter
 import ir.easazade.jesusnote.view.adapters.ViewPagerCardTransformer
 import ir.easazade.jesusnote.view.dialog.AddTaskDialog
@@ -27,13 +29,20 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
+    val tasks = mutableListOf(
+      Task(0, currentDateTime(), "یک روز خوب و بارونی که می شه خیلی خوب و عالی زندگی کرد", false),
+      Task(0, currentDateTime(), "رضا اشبلان", true),
+      Task(0, currentDateTime(), "خرید خونه", true),
+      Task(0, currentDateTime(), "برم شرکت", false)
+    )
+
     val days = listOf(
-      Day(DateTime(Timestamp.valueOf("2019-06-25 20:50:00")), listOf()),
-      Day(DateTime(Timestamp.valueOf("2019-06-24 20:50:00")), listOf()),
-      Day(DateTime(Timestamp.valueOf("2019-06-23 20:50:00")), listOf()),
-      Day(DateTime(Timestamp.valueOf("2019-06-22 20:50:00")), listOf()),
-      Day(DateTime(Timestamp.valueOf("2019-06-21 20:50:00")), listOf()),
-      Day(DateTime(Timestamp.valueOf("2019-06-20 20:50:00")), listOf())
+      Day(DateTime(Timestamp.valueOf("2019-06-25 20:50:00")), tasks),
+      Day(DateTime(Timestamp.valueOf("2019-06-24 20:50:00")), tasks),
+      Day(DateTime(Timestamp.valueOf("2019-06-23 20:50:00")), tasks),
+      Day(DateTime(Timestamp.valueOf("2019-06-22 20:50:00")), tasks),
+      Day(DateTime(Timestamp.valueOf("2019-06-21 20:50:00")), tasks),
+      Day(DateTime(Timestamp.valueOf("2019-06-20 20:50:00")), tasks)
     )
 
     val adapter = DaysAdapter(days)
