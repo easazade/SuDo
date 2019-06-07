@@ -6,12 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 import ir.easazade.jesusnote.model.Day
 import ir.easazade.jesusnote.utils.AppContextWrapper
 import ir.easazade.jesusnote.utils.DateTime
-import ir.easazade.jesusnote.view.DaysAdapter
-import ir.easazade.jesusnote.view.ViewPagerCardTransformer
+import ir.easazade.jesusnote.view.adapters.DaysAdapter
+import ir.easazade.jesusnote.view.adapters.ViewPagerCardTransformer
+import ir.easazade.jesusnote.view.dialog.AddTaskDialog
+import kotlinx.android.synthetic.main.activity_main.mAddTask
 import kotlinx.android.synthetic.main.activity_main.mDaysViewPager
 import java.sql.Timestamp
 
 class MainActivity : AppCompatActivity() {
+
+  private val addTaskDialog by lazy {
+    AddTaskDialog.newInstance()
+  }
 
   override fun attachBaseContext(newBase: Context?) {
     super.attachBaseContext(AppContextWrapper.wrap(newBase))
@@ -34,5 +40,9 @@ class MainActivity : AppCompatActivity() {
     mDaysViewPager.adapter = adapter
     mDaysViewPager.offscreenPageLimit = 3
     mDaysViewPager.setPageTransformer(true, ViewPagerCardTransformer())
+
+    mAddTask.setOnClickListener {
+      addTaskDialog.show(supportFragmentManager, AddTaskDialog.TAG)
+    }
   }
 }

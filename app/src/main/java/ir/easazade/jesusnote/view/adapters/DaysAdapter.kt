@@ -1,4 +1,4 @@
-package ir.easazade.jesusnote.view
+package ir.easazade.jesusnote.view.adapters
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package ir.easazade.jesusnote.view
+package ir.easazade.jesusnote.view.adapters
 
 import android.view.View
 import androidx.viewpager.widget.ViewPager
@@ -13,9 +13,6 @@ class ViewPagerCardTransformer : ViewPager.PageTransformer {
       page.translationX = -page.width * position
       page.translationY = -30 * position
     } else {
-//      page.scaleX = 2f * position
-//      page.scaleY = 2f * position
-
 //      page.setBackgroundColor(Color.RED)
       page.alpha = 1 + 0.3f * position
       page.scaleX = 0.9f + 0.05f * position

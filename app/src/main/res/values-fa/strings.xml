@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="add_new_task">اضافه کردن برنامه جدید</string>
+  <string name="new_task">برنامه جدید</string>
+  <string name="description">توضیحات</string>
 </resources>

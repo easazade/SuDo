@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorAccent"
+  tools:context=".MainActivity"
+  >
+
+  <androidx.viewpager.widget.ViewPager
+    android:id="@+id/mDaysViewPager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-    tools:context=".MainActivity">
+    android:layout_marginBottom="70dp"
+    android:overScrollMode="never"
+    />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/mDaysViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="70dp"
-        android:overScrollMode="never" />
-
-    <TextView
-        android:id="@+id/mAddTask"
-        android:layout_width="wrap_content"
-      android:fontFamily="@font/app_default"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="25dp"
-        android:text="@string/add_new_task"
-        android:textColor="@color/white"
-        android:textSize="22sp" />
+  <TextView
+    android:id="@+id/mAddTask"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center"
+    android:layout_marginBottom="25dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:fontFamily="@font/app_default"
+    android:text="@string/add_new_task"
+    android:textColor="@color/white"
+    android:textSize="22sp"
+    />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
