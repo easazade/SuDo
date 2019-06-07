@@ -6,6 +6,8 @@ import java.util.GregorianCalendar
 
 class DateTime(private val timestamp: Timestamp) {
 
+  val hour: Int
+  val minute: Int
   val dayOfMonth: Int
   val month: Int
   val year: Int
@@ -18,10 +20,18 @@ class DateTime(private val timestamp: Timestamp) {
   init {
     CALENDAR.time = timestamp
     dayOfMonth = CALENDAR.get(Calendar.DAY_OF_MONTH)
-    month = CALENDAR.get(Calendar.MONTH)
+    month = CALENDAR.get(Calendar.MONTH) + 1
     year = CALENDAR.get(Calendar.YEAR)
+    hour = CALENDAR.get(Calendar.HOUR_OF_DAY)
+    minute = CALENDAR.get(Calendar.MINUTE)
     dayName = CALENDAR.get(Calendar.DAY_OF_WEEK).toDayOfWeekName()
   }
+
+  fun getTimeAsString() = "${addZero(hour)}:${addZero(minute)}"
+  fun getDateAsString() = "${addZero(year)}-${addZero(month)}-${addZero(dayOfMonth)}"
+
+  private fun addZero(value: Int): String =
+    if (value < 10 && value > -1) "0$value" else value.toString()
 }
 
 private fun Number.toDayOfWeekName(): String {

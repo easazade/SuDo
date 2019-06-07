@@ -3,4 +3,7 @@
     <string name="add_new_task">اضافه کردن برنامه جدید</string>
   <string name="new_task">برنامه جدید</string>
   <string name="description">توضیحات</string>
+  <string name="date">تاریخ</string>
+  <string name="time">زمان</string>
+  <string name="done">انجام شده</string>
 </resources>

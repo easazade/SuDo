@@ -3,4 +3,7 @@
     <string name="add_new_task">add new task</string>
   <string name="new_task">new task</string>
   <string name="description">description</string>
+  <string name="date">date</string>
+  <string name="time">time</string>
+  <string name="done">done</string>
 </resources>

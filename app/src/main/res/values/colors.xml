@@ -7,4 +7,6 @@
     <color name="text_dark">#222222</color>
   <color name="text_light">#AFAFAF</color>
     <color name="none">#00000000</color>
+  <color name="grey_line">#80A9A9A9</color>
+  <color name="text_medium">#6F6F6F</color>
 </resources>

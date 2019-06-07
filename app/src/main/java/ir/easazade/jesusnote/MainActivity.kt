@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity() {
     setContentView(R.layout.activity_main)
 
     val days = listOf(
-      Day(DateTime(Timestamp.valueOf("2019-06-25 20:50:00"))),
-      Day(DateTime(Timestamp.valueOf("2019-06-24 20:50:00"))),
-      Day(DateTime(Timestamp.valueOf("2019-06-23 20:50:00"))),
-      Day(DateTime(Timestamp.valueOf("2019-06-22 20:50:00"))),
-      Day(DateTime(Timestamp.valueOf("2019-06-21 20:50:00"))),
-      Day(DateTime(Timestamp.valueOf("2019-06-20 20:50:00")))
+      Day(DateTime(Timestamp.valueOf("2019-06-25 20:50:00")), listOf()),
+      Day(DateTime(Timestamp.valueOf("2019-06-24 20:50:00")), listOf()),
+      Day(DateTime(Timestamp.valueOf("2019-06-23 20:50:00")), listOf()),
+      Day(DateTime(Timestamp.valueOf("2019-06-22 20:50:00")), listOf()),
+      Day(DateTime(Timestamp.valueOf("2019-06-21 20:50:00")), listOf()),
+      Day(DateTime(Timestamp.valueOf("2019-06-20 20:50:00")), listOf())
     )
 
     val adapter = DaysAdapter(days)
