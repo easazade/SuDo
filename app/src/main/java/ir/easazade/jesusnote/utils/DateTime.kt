@@ -26,13 +26,13 @@ class DateTime(private val timestamp: Timestamp) {
 
 private fun Number.toDayOfWeekName(): String {
   return when {
-    this == Calendar.SUNDAY -> "sunday"
-    this == Calendar.MONDAY -> "monday"
-    this == Calendar.TUESDAY -> "tuesday"
-    this == Calendar.WEDNESDAY -> "wednesday"
-    this == Calendar.THURSDAY -> "thursday"
-    this == Calendar.FRIDAY -> "friday"
-    this == Calendar.SATURDAY -> "saturday"
+    this == Calendar.SUNDAY -> "یکشنبه"
+    this == Calendar.MONDAY -> "دوشنبه"
+    this == Calendar.TUESDAY -> "سه شنبه"
+    this == Calendar.WEDNESDAY -> "چهارشنبه"
+    this == Calendar.THURSDAY -> "پنجشنبه"
+    this == Calendar.FRIDAY -> "جمعه"
+    this == Calendar.SATURDAY -> "شنبه"
     else -> ""
   }
 }

@@ -3,8 +3,10 @@ package ir.easazade.jesusnote
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import ir.easazade.jesusnote.model.Day
 import ir.easazade.jesusnote.utils.AppContextWrapper
 import ir.easazade.jesusnote.utils.DateTime
+import ir.easazade.jesusnote.view.DaysAdapter
 import ir.easazade.jesusnote.view.ViewPagerCardTransformer
 import kotlinx.android.synthetic.main.activity_main.mDaysViewPager
 import java.sql.Timestamp
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     val adapter = DaysAdapter(days)
     mDaysViewPager.adapter = adapter
-//    mDaysViewPager.setPageTransformer(false, ViewPagerCardTransformer())
+    mDaysViewPager.offscreenPageLimit = 3
+    mDaysViewPager.setPageTransformer(true, ViewPagerCardTransformer())
   }
 }
