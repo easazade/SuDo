@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.PagerAdapter
 import ir.easazade.jesusnote.R
 import ir.easazade.jesusnote.R.layout
-import ir.easazade.jesusnote.model.Day
+import ir.easazade.jesusnote.mvp.model.Day
 
 class DaysAdapter(
   private val days: List<Day>

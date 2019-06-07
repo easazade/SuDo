@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorAccent"
+  >
+
+  <androidx.viewpager.widget.ViewPager
+    android:id="@+id/mHomeViewPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="70dp"
+    android:overScrollMode="never"
+    />
+
+  <TextView
+    android:id="@+id/mHomeAddTask"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center"
+    android:clickable="true"
+    android:focusable="true"
+    android:fontFamily="@font/app_default"
+    android:gravity="center"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp"
+    android:text="@string/add_new_task"
+    android:textColor="@color/white"
+    android:textSize="22sp"
+    />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

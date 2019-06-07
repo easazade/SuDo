@@ -16,24 +16,25 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ir.easazade.jesusnote.R
+import ir.easazade.jesusnote.mvp.model.Task
 import ir.easazade.jesusnote.utils.currentDateTime
 
-class AddTaskDialog() : DialogFragment() {
+class AddTaskDialog : DialogFragment() {
 
-  private var onSaveButtonClicked: (() -> Unit)? = null
+  private var onSaveButtonClicked: ((Task) -> Unit)? = null
   private var root: View? = null
   private var dateTime = currentDateTime()
 
   companion object {
     const val TAG = "AddTaskDialog"
 
-    fun newInstance(): DialogFragment {
+    fun newInstance(): AddTaskDialog {
       val frag = AddTaskDialog()
       return frag
     }
   }
 
-  fun setOnSaveButtonClieckListener(listener: () -> Unit) {
+  fun setOnSaveButtonClieckListener(listener: (Task) -> Unit) {
     this.onSaveButtonClicked = listener
   }
 
@@ -62,8 +63,10 @@ class AddTaskDialog() : DialogFragment() {
     }
     inputDescription.setText("")
     saveBtn.setOnClickListener {
-      if (onSaveButtonClicked != null)
-        onSaveButtonClicked?.invoke()
+      if (onSaveButtonClicked != null) {
+        val task = Task(0, dateTime, inputDescription.text.toString(), changeStatus.isChecked)
+        onSaveButtonClicked?.invoke(task)
+      }
       if (dialog.isShowing)
         dialog.dismiss()
     }

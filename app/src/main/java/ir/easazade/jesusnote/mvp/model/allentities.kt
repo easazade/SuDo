@@ -1,4 +1,4 @@
-package ir.easazade.jesusnote.model
+package ir.easazade.jesusnote.mvp.model
 
 import ir.easazade.jesusnote.utils.DateTime
 

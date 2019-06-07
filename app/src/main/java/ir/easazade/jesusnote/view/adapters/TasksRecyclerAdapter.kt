@@ -7,7 +7,7 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ir.easazade.jesusnote.R
-import ir.easazade.jesusnote.model.Task
+import ir.easazade.jesusnote.mvp.model.Task
 import ir.easazade.jesusnote.view.adapters.TasksRecyclerAdapter.TaskVH
 
 class TasksRecyclerAdapter(
