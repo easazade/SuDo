@@ -53,6 +53,7 @@ class AddTaskDialog() : DialogFragment() {
     date.text = dateTime.getDateAsString()
     changeStatus.isChecked = false
     status.setTextColor(ContextCompat.getColor(activity!!, R.color.text_light))
+    status.setOnClickListener { changeStatus.performClick() }
     changeStatus.setOnCheckedChangeListener { buttonView, isChecked ->
       if (isChecked)
         status.setTextColor(ContextCompat.getColor(activity!!, R.color.colorAccent))

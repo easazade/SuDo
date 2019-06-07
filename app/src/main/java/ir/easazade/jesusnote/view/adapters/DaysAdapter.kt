@@ -1,5 +1,6 @@
 package ir.easazade.jesusnote.view.adapters
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,8 @@ class DaysAdapter(
     list.layoutManager = LinearLayoutManager(container.context)
     list.adapter = TasksRecyclerAdapter(days[position].tasks.toMutableList())
     title.text = days[position].dateTime.getDateAsString()
+    if (Build.VERSION.SDK_INT >= 21)
+      title.elevation = 5f
     return view
   }
 

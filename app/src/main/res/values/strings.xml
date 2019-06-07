@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">SuDo</string>
-    <string name="add_new_task">add new task</string>
+    <string name="add_new_task">add new task \u002b</string>
   <string name="new_task">new task</string>
   <string name="description">description</string>
   <string name="date">date</string>

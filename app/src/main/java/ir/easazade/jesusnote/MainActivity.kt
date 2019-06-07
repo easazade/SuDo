@@ -33,6 +33,11 @@ class MainActivity : AppCompatActivity() {
       Task(0, currentDateTime(), "یک روز خوب و بارونی که می شه خیلی خوب و عالی زندگی کرد", false),
       Task(0, currentDateTime(), "رضا اشبلان", true),
       Task(0, currentDateTime(), "خرید خونه", true),
+      Task(0, currentDateTime(), "خرید لباس", false),
+      Task(0, currentDateTime(), "برم پیش مهدی", false),
+      Task(0, currentDateTime(), "برم عروسی", false),
+      Task(0, currentDateTime(), "خواب", false),
+      Task(0, currentDateTime(), "ورزش", false),
       Task(0, currentDateTime(), "برم شرکت", false)
     )
 
@@ -53,5 +58,9 @@ class MainActivity : AppCompatActivity() {
     mAddTask.setOnClickListener {
       addTaskDialog.show(supportFragmentManager, AddTaskDialog.TAG)
     }
+  }
+
+  override fun onBackPressed() {
+    moveTaskToBack(true)
   }
 }

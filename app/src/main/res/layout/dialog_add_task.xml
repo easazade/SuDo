@@ -154,7 +154,7 @@
       />
 
     <androidx.appcompat.widget.SwitchCompat
-      android:id="@+id/switchCompat"
+      android:id="@+id/addTaskDialog_changeStatus"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="15dp"
@@ -171,9 +171,9 @@
       android:text="@string/done"
       android:textColor="@color/text_light"
       android:textSize="18sp"
-      app:layout_constraintBottom_toBottomOf="@+id/switchCompat"
+      app:layout_constraintBottom_toBottomOf="@+id/addTaskDialog_changeStatus"
       app:layout_constraintStart_toStartOf="@+id/view2"
-      app:layout_constraintTop_toTopOf="@+id/switchCompat"
+      app:layout_constraintTop_toTopOf="@+id/addTaskDialog_changeStatus"
       />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
