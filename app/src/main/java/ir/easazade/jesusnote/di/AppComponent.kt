@@ -16,7 +16,10 @@ import kotlinx.coroutines.asCoroutineDispatcher
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
-class AppComponent(private val activity: BaseActivity) : IAppComponent {
+class AppComponent(
+  private val activity: BaseActivity,
+  private val databaseModule: IDatabaseModule
+) : IAppComponent {
 
   private var mDatabase: IAppDatabase? = null
   private var mAppThreads: IAppThreads? = null
@@ -26,7 +29,7 @@ class AppComponent(private val activity: BaseActivity) : IAppComponent {
     return if (mDatabase != null)
       mDatabase!!
     else {
-      mDatabase = AppDatabase()
+      mDatabase = AppDatabase(databaseModule.realmProvider())
       mDatabase!!
     }
   }
@@ -62,6 +65,5 @@ class AppComponent(private val activity: BaseActivity) : IAppComponent {
   }
 
   override fun newHomePresenter(homeView: IHomeView): HomePresenter =
-      HomePresenter(database(),threads(),homeView)
-
+    HomePresenter(database(), threads(), homeView)
 }
