@@ -4,7 +4,7 @@ import java.sql.Timestamp
 import java.util.Calendar
 import java.util.GregorianCalendar
 
-class DateTime(private val timestamp: Timestamp) {
+class DateTime(val timestamp: Timestamp) {
 
   val hour: Int
   val minute: Int
