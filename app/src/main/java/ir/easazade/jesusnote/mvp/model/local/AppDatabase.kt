@@ -12,6 +12,9 @@ class AppDatabase(private val realmProvider: RealmProvider) : IAppDatabase {
     transaction { it.copyToRealmOrUpdate(task.toDbTask()) }
   }
 
+  override fun getTask(taskId: Long): Task? =
+    realmProvider.get().where(DbTask::class.java).equalTo("id", taskId).findFirst()?.toTask()
+
   override fun deleteTask(taskId: Long) {
     transaction { it.where(DbTask::class.java).findAll().deleteAllFromRealm() }
   }
@@ -19,6 +22,10 @@ class AppDatabase(private val realmProvider: RealmProvider) : IAppDatabase {
   override fun getAllDays(): MutableList<Day> {
     val days = realmProvider.get().where(DbDay::class.java).findAll()
     return days.map { it.toDay() }.toMutableList()
+  }
+
+  override fun saveDay(day: Day) {
+    transaction { it.copyToRealmOrUpdate(day.toDbDay()) }
   }
 
   private fun transaction(action: (Realm) -> Unit) {

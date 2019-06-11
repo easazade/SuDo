@@ -8,6 +8,7 @@ import ir.easazade.jesusnote.mvp.model.DbTask
 import ir.easazade.jesusnote.mvp.model.local.AppDatabase
 import ir.easazade.jesusnote.mvp.model.local.IAppDatabase
 import ir.easazade.jesusnote.mvp.model.local.RealmProvider
+import ir.easazade.jesusnote.utils.ListUtils.Companion.compareLists
 import org.junit.*
 import org.junit.Assert.*
 import org.junit.runner.*
@@ -69,13 +70,46 @@ class DatabaseTest {
 
   @Test
   fun androidTest_shouldDeleteTask() {
+    //assert first
+    //with
+    val task = fakes.tasks[0]
+    database.saveTask(task)
+    assertTrue(realmProvider.get().where(DbTask::class.java).equalTo("id", task.id).findAll().isNotEmpty())
+    //when
+    database.deleteTask(task.id)
+    //then
+    assertTrue(realmProvider.get().where(DbTask::class.java).equalTo("id", task.id).findAll().isEmpty())
   }
 
   @Test
   fun androidTest_shouldUpdateTask() {
+    //assert first
+    assertTrue(realmProvider.get().where(DbTask::class.java).findAll().isEmpty())
+    //with
+    val task = fakes.tasks[0]
+    database.saveTask(task)
+    assertTrue(realmProvider.get().where(DbTask::class.java).findAll().isNotEmpty())
+    val newDesc = "some new description here and there"
+    val updatedTask = task.copy(description = newDesc)
+    //when
+    database.saveTask(updatedTask)
+    //then
+    val result = database.getTask(updatedTask.id)!!
+    assertEquals(result.description, newDesc)
   }
 
   @Test
   fun androidTest_shouldGetAllDays() {
+    //with
+    val days = fakes.days
+    days.forEach { database.saveDay(it) }
+    //when
+    val result = database.getAllDays()
+    //then
+    assertEquals(days.size, result.size)
+    val differences = compareLists(days, result) { d1, d2 -> d1.id == d2.id }
+    differences.toList().forEach {
+      assertTrue(it.isEmpty())
+    }
   }
 }

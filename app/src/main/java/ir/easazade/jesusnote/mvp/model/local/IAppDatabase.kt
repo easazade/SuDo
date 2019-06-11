@@ -8,4 +8,6 @@ interface IAppDatabase {
   fun saveTask(task: Task)
   fun deleteTask(taskId: Long)
   fun getAllDays(): MutableList<Day>
+  fun getTask(taskId: Long): Task?
+  fun saveDay(day: Day)
 }
