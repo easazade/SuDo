@@ -60,4 +60,5 @@ class HomePresenterUnitTest {
       view.initializeHomeList(days)
     }
   }
+
 }

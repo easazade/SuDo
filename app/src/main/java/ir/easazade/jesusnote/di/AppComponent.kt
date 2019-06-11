@@ -5,8 +5,6 @@ import android.os.Looper
 import io.reactivex.schedulers.Schedulers
 import ir.easazade.jesusnote.R
 import ir.easazade.jesusnote.mvp.logic.HomePresenter
-import ir.easazade.jesusnote.mvp.model.local.AppDatabase
-import ir.easazade.jesusnote.mvp.model.local.IAppDatabase
 import ir.easazade.jesusnote.mvp.view.IHomeView
 import ir.easazade.jesusnote.sdk.AppThreads
 import ir.easazade.jesusnote.sdk.BaseActivity
@@ -21,18 +19,10 @@ class AppComponent(
   private val databaseModule: IDatabaseModule
 ) : IAppComponent {
 
-  private var mDatabase: IAppDatabase? = null
   private var mAppThreads: IAppThreads? = null
   private var mNavigation: Navigation? = null
 
-  override fun database(): IAppDatabase {
-    return if (mDatabase != null)
-      mDatabase!!
-    else {
-      mDatabase = AppDatabase(databaseModule.realmProvider())
-      mDatabase!!
-    }
-  }
+  override fun database() = databaseModule.database()
 
   override fun navigation(): Navigation {
     return if (mNavigation != null)

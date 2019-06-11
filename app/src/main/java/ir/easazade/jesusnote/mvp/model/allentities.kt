@@ -15,7 +15,9 @@ data class Day(
   fun toDbDay() = DbDay(id, dateTime.timestamp.time, tasks.map { it.toDbTask() }.toRealmList())
 }
 
-private fun <E> List<E>.toRealmList(): RealmList<E> = RealmList<E>().apply { addAll(this) }
+private fun <E> List<E>.toRealmList(): RealmList<E> = RealmList<E>().also {
+  it.addAll(this)
+}
 
 data class Task(
   val id: Long,

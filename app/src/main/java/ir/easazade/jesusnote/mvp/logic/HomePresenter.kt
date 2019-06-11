@@ -21,6 +21,11 @@ class HomePresenter(
   }
 
   fun deleteTask(taskId: Long) {
+
+  }
+
+  fun addNewTask(task:Task){
+
   }
 
   fun initList() = launch {

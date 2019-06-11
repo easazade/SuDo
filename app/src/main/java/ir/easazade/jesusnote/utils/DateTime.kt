@@ -8,6 +8,7 @@ class DateTime(val timestamp: Timestamp) {
 
   val hour: Int
   val minute: Int
+  val second: Int
   val dayOfMonth: Int
   val month: Int
   val year: Int
@@ -24,6 +25,7 @@ class DateTime(val timestamp: Timestamp) {
     year = CALENDAR.get(Calendar.YEAR)
     hour = CALENDAR.get(Calendar.HOUR_OF_DAY)
     minute = CALENDAR.get(Calendar.MINUTE)
+    second = CALENDAR.get(Calendar.SECOND)
     dayName = CALENDAR.get(Calendar.DAY_OF_WEEK).toDayOfWeekName()
   }
 
@@ -32,6 +34,9 @@ class DateTime(val timestamp: Timestamp) {
 
   private fun addZero(value: Int): String =
     if (value < 10 && value > -1) "0$value" else value.toString()
+
+  override fun toString(): String =
+    "$year-$month-$dayOfMonth $hour:$minute:$second"
 }
 
 private fun Number.toDayOfWeekName(): String {

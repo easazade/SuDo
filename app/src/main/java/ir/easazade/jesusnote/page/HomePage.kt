@@ -43,6 +43,7 @@ class HomePage(
   }
 
   override fun onLoadPage(args: Args) {
+    presenter.initList()
   }
 
   override fun onExitPage() {
